@@ -1,0 +1,8 @@
+{
+    "name": "Another Sidebar",
+    "version": "0.1.0",
+    "author": "Freeplay#5676",
+    "theme": "theme.css",
+    "license": "MIT",
+    "description": "Adds another sidebar for buttons n' stuff. Inspired by Hiven.io's layout"
+}
