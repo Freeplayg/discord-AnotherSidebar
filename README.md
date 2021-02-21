@@ -1,2 +1,1 @@
-# discord-AnotherSidebar
-Another sidebar for Discord. Moving profile, VC buttons, and more to the sidebar.
+![](https://i.imgur.com/J95Re46.png)
