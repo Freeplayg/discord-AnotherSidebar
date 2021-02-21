@@ -1,1 +1,317 @@
+/* ==UserStyle==
+@name           Discord | Another Sidebar
+@version        1.0.0
+@description    Another sidebar for Discord. Moving profile, VC buttons, and more to the sidebar.
+@updateURL      https://github.com/Freeplayg/discord-AnotherSidebar/raw/main/userstyle.user.css
 
+ -- AUTHOR STUFF --
+@namespace      Freeplay
+@author         Freeplay (https://pages.codeberg.org/freeplay/)
+@homepageURL    https://codeberg.org/Freeplay/UserStyles
+@supportURL     https://codeberg.org/Freeplay/UserStyles/issues
+@preprocessor   stylus
+==/UserStyle== */
+
+@-moz-document domain("discord.com") {
+
+/* -- Layout -- */
+.layer-3QrUeG {
+    background-color: var(--background-tertiary) !important;
+}
+.wrapper-1Rf91z {
+    width: 127px;
+    overflow: visible;
+}
+.tree-3tCaw8 {
+    outline: none !important;
+}
+.tree-3tCaw8::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 57px;
+    bottom: 0;
+    width: 80px;
+    display: flex;
+    z-index: 0;
+    background-color: var(--background-secondary-alt);
+    border-top-left-radius: 8px;
+    pointer-events: none;
+}
+.scroller-2TZvBN {
+    background: none !important;
+    padding-left: 56.5px;
+}
+.unreadMentionsIndicatorBottom-BXS58x, .unreadMentionsIndicatorTop-gA6RCh {
+    left: 55.5px;
+}
+
+.base-3dtUhz {
+    left: 127px;
+    border-top-left-radius: 8px;
+}
+
+/* Chatbar */
+.form-2fGMdU {
+    padding-left: 16px !important;
+}
+
+/* -- Buttons -- */
+/* Home Button */
+.tutorialContainer-1v44GL {
+    position: sticky;
+    top: 0;
+    margin-left: -57px !important;
+    margin-right: 70px !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: -48px;
+    z-index: 100;
+}
+.tutorialContainer-1v44GL .listItem-2P_4kh {
+    width: 57px;
+}
+.tutorialContainer-1v44GL .childWrapper-anI2G9, .tutorialContainer-1v44GL .childWrapper-anI2G9:hover {
+    background: none !important;
+}
+
+
+/* Avatar */
+.avatarWrapper-2yR4wp {
+    position: fixed;
+    bottom: 15px;
+    left: 8px;
+    width: 52px;
+    height: 41px;
+}
+.avatarWrapper-2yR4wp .avatar-SmRMf2 {
+    width: 41px !important;
+    height: 41px !important;
+}
+.avatarWrapper-2yR4wp .avatar-SmRMf2 foreignObject {
+    mask: none !important;
+    border-radius: 8px;
+}
+
+/* VC Buttons */
+.container-3baos1 .directionRow-3v3tfG {
+    position: fixed !important;
+    left: 8px !important;
+    bottom: 65px !important;
+    display: flex !important;
+    filter: none !important;
+    
+    flex-direction: column !important;
+    width: 41px !important;
+    height: auto !important;
+    background: none !important;
+    align-items: center !important;
+
+    padding-left: 0 !important;
+}
+.container-3baos1 .directionRow-3v3tfG button {
+    width: 41px !important;
+    height: 41px !important;
+    margin: 2px 0 !important;
+}
+.container-3baos1 .directionRow-3v3tfG button svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+
+/* Display Name & Status */
+.container-3baos1 {
+    position: absolute;
+    z-index: 100;
+}
+.container-3baos1 .nameTag-3uD-yy {
+    position: fixed;
+    left: 60px;
+    bottom: 8px;
+    display: block !important;
+    
+    background-color: black;
+    padding: 10px 15px;
+    border-radius: 8px;
+    z-index: 100;
+    transform: scale(.95) translateX(-5px);
+    filter: opacity(0);
+    pointer-events: none;
+    box-shadow: var(--elevation-high);
+    transition: transform .1s, filter .1s;
+}
+.container-3baos1 .nameTag-3uD-yy::before {
+    content: "";
+    border: 5px solid transparent;
+    border-right-color: black;
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 100%;
+    margin-top: -5px;
+    top: 50%;
+}
+.avatarWrapper-2yR4wp:hover + .nameTag-3uD-yy, .nameTag-3uD-yy:hover {
+    transform: none;
+    filter: opacity(1);
+    pointer-events: all;
+}
+
+
+/* Action Buttons */
+.actionButtons-14eAc_ {
+    position: fixed;
+    left: 8px;
+    bottom: 202px;
+    
+    width: 41px;
+    
+    flex-direction: column;
+}
+.actionButtons-14eAc_ div, .actionButtons-14eAc_ span {
+    display: contents;
+    flex: none;
+}
+.actionButtons-14eAc_ button {
+    padding: 0;
+    margin: 0;
+    width: 41px;
+    height: 41px;
+    margin: 2px 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: none !important;
+}
+.actionButtons-14eAc_ button:hover {
+    background: var(--background-modifier-selected) !important;
+}
+.actionButtons-14eAc_ button svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+.actionButtons-14eAc_ svg {
+    margin: 0 !important;
+}
+.actionButtons-14eAc_ .contents-18-Yxp > div {
+    font-size: 0;
+}
+
+/* Disconnect Button */
+.container-1giJp5 {
+    position: fixed;
+    left: 8px;
+    bottom: 374px;
+    padding: 0;
+    width: 52px;
+    height: auto;
+    margin-bottom: -82px;
+    
+    border: none;
+    z-index: 100;
+}
+.container-1giJp5 .inner-tyMogq {
+    position: fixed;
+    left: 60px;
+    bottom: 246px;
+    
+    height: min-content !important;
+    background-color: black;
+    padding: 10px 15px;
+    border-radius: 8px;
+    z-index: 100;
+    transform: scale(.95) translateX(-5px);
+    filter: opacity(0);
+    pointer-events: none;
+    box-shadow: var(--elevation-high);
+    transition: transform .1s, filter .1s;
+}
+.container-1giJp5 .inner-tyMogq::before {
+    content: "";
+    border: 5px solid transparent;
+    border-right-color: black;
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 100%;
+    margin-top: -5px;
+    top: 50%;
+}
+.container-1giJp5:hover .inner-tyMogq {
+    transform: none;
+    filter: opacity(1);
+    pointer-events: all;
+}
+
+.container-1giJp5 .horizontal-1ae9ci {
+    margin: 0;
+    width: 41px;
+    height: auto !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.container-1giJp5 .horizontal-1ae9ci button:not(.statusWithPopout-3ZfFol) {
+    width: 100%;
+    height: 40px;
+    margin: 2px 0;
+}
+.container-1giJp5 .horizontal-1ae9ci button:not(.statusWithPopout-3ZfFol) svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+.container-1giJp5 .horizontal-1ae9ci button[aria-label="Disconnect"] svg {
+    color: #f04747;
+}
+
+
+/* Inbox Button */
+.iconWrapper-2OrFZ1[aria-label="Inbox"] {
+    position: fixed;
+    left: 4px;
+    top: 75px;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconWrapper-2OrFZ1[aria-label="Inbox"] .icon-22AiRD {
+    width: 30px;
+    height: 30px;
+    color: var(--text-normal);
+}
+.iconWrapper-2OrFZ1[aria-label="Inbox"]:hover .icon-22AiRD {
+    color: white;
+    background: none !important;
+}
+.recentMentionsPopout-3rCiI6 {
+    position: fixed;
+    left: 68px !important;
+    top: 32px !important;
+    bottom: 10px !important;
+    border-radius: 10px !important;
+    box-shadow: var(--elevation-high) !important;
+}
+
+/* Nitro Gift Button */
+.buttons-3JBrkn > button:first-child {
+    position: fixed;
+    top: 135px;
+    left: 4px;
+    display: unset !important;
+    width: 48px;
+} .buttons-3JBrkn > button:first-child svg {
+    width: 30px;
+    height: 30px;
+}
+
+/* -- POPUPS -- */
+.noiseCancellationPopout-iRK2A0 {
+    position: fixed;
+    left: 38px;
+}
+}
